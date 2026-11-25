@@ -11,8 +11,16 @@
 
 + Client
   + Ubuntu 24.04 or above with Internet Access
+  + Setup
+    + ```
+        sudo apt update && sudo apt upgrade -y
+        sudo timedatectl set-timezone Asia/Hong_Kong
+        sudo hostnamectl set-hostname Client01
+        sudo vi /etc/hosts
+          127.0.1.1 Client01
+      ```
   + Extra NIC on Data Subnet
-  + Enable RDP for Candidates
+  + Enable RDP for Candidates <<< mmm... doesn't work >>>
   + Import self-sign CA cert
   + Download Cherry Studio Chatbot and setup HTTP Proxy and MCP Connector(s)
 
@@ -20,15 +28,23 @@
   + Ubuntu 24.04 or above with Internet Access
     + Setup
       + ```
+        sudo apt update && sudo apt upgrade -y
+        sudo apt install python3-pip -y
+        sudo timedatectl set-timezone Asia/Hong_Kong
+        sudo hostnamectl set-hostname API-MCP
+        sudo vi /etc/hosts
+          127.0.1.1 API-MCP
+        ```
   + Install latest Python, FastMCP, Flask
     + ```
       pip install fastmcp
-      pip install Flask
+      sudo apt install python3-flask -y
+      sudo pip3 install --break-system-packages fastmcp --ignore-installed typing_extensions
       ```
   + Setup & Run latest FastMCP
     + Setup
       + ```
-        mkdir -p ZT_MCP && cd "ZT_MCP"
+        mkdir -p /home/ubuntu/ZT_MCP && cd "ZT_MCP"
         ```
     + Run
       + ```
@@ -37,7 +53,7 @@
   + Setup & Run lastest Flask
     + Setup
       + ```
-        mkdir -p ZT_Flask && cd "ZT_Flask"
+        mkdir -p /home/ubuntu/ZT_Flask && cd "ZT_Flask"
         ```
     + Run
       + ```
