@@ -15,14 +15,27 @@
     + ```
         sudo apt update && sudo apt upgrade -y
         sudo timedatectl set-timezone Asia/Hong_Kong
-        sudo hostnamectl set-hostname Client01
+        sudo hostnamectl set-hostname Client02
         sudo vi /etc/hosts
-          127.0.1.1 Client01
+          127.0.1.1 Client02
+        sudo passwd ubuntu
+          ubuntu
+        wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+        sudo apt install ./google-chrome-stable_current_amd64.deb -y
       ```
   + Extra NIC on Data Subnet
-  + Enable RDP for Candidates <<< mmm... doesn't work >>>
+  + Enable RDP for Candidates <<< ubuntu/ubuntu >>>
   + Import self-sign CA cert
   + Download Cherry Studio Chatbot and setup HTTP Proxy and MCP Connector(s)
+    + Setup
+    + ```
+        https://cherryai.com/download
+        sudo apt install ./Cherry-Studio-2.2.3-linux-x64.deb
+      ```
+    + Run
+    + ```
+
+      ```
 
 + MCP & API server
   + Ubuntu 24.04 or above with Internet Access
@@ -60,4 +73,8 @@
         flask run --host=0.0.0.0
         ```
 
+
+![alt text](image.png)
+![alt text](image-1.png)
+sk-d959080495384b9a8b76eba42155e71d
 
